@@ -1,0 +1,9 @@
+{
+  "id": "sample-norwegian",
+  "title": "Sample Norwegian",
+  "source": "Norwegian learning material",
+  "language": "nb",
+  "tags": ["norwegian", "shadowing"],
+  "level": "unknown",
+  "description": "Minimal Norwegian text sample. Add a real audio.wav before ingesting."
+}

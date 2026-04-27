@@ -1,0 +1,26 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Content (large files not committed)
+content/processed/
+# Keep raw content structure but not actual raw files (they may be large)
+# content/raw/ is committed (just the .gitkeep)
+
+# IDE
+.idea/
+.vscode/settings.json

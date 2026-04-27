@@ -1,0 +1,35 @@
+{
+  "name": "norwegian-shadowing-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo for the Norwegian shadowing practice app",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "preview": "npm run preview --workspace=apps/web",
+    "lint": "npm run lint --workspace=apps/web",
+    "web:dev": "npm run dev --workspace=apps/web",
+    "web:build": "npm run build --workspace=apps/web",
+    "web:typecheck": "npm run type-check --workspace=apps/web",
+    "env:setup": "bash scripts/setup_envs.sh",
+    "env:setup:reset": "bash scripts/setup_envs.sh --reset",
+    "pipeline:validate": "PYTHONPATH=tools/pipeline/src python3 -m shadowing_pipeline.cli validate",
+    "pipeline:build": "PYTHONPATH=tools/pipeline/src python3 -m shadowing_pipeline.cli build",
+    "pipeline:init": "PYTHONPATH=tools/pipeline/src python3 -m shadowing_pipeline.cli init-lesson",
+    "pipeline:repair-annotated": "PYTHONPATH=tools/pipeline/src python3 -m shadowing_pipeline.cli repair-annotated",
+    "pipeline:regenerate-annotated": "PYTHONPATH=tools/pipeline/src python3 -m shadowing_pipeline.cli regenerate-annotated",
+    "pipeline:refresh": "PYTHONPATH=tools/pipeline/src python3 -m shadowing_pipeline.cli refresh",
+    "lessons:sync": "sh scripts/sync_lessons_to_web.sh",
+    "lesson:ingest": "bash scripts/run_ingestion.sh",
+    "lesson:refresh": "bash scripts/run_ingestion.sh",
+    "test:py": "PYTHONPATH=tools/pipeline/src python3 -m pytest tools/pipeline/tests",
+    "test:web": "npm run type-check --workspace=apps/web && npm run build --workspace=apps/web"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
